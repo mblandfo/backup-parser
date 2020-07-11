@@ -1,0 +1,26 @@
+{
+  "name": "backup-parser",
+  "version": "1.0.0",
+  "description": "search through multiple backups to find unique files",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "pretty": "prettier --write \"src/**/*.ts\""
+  },
+  "author": "Mike Blandford",
+  "license": "ISC",
+  "dependencies": {
+    "@types/glob": "^7.1.2",
+    "@types/jest": "^26.0.4",
+    "@types/lodash": "^4.14.157",
+    "@types/node": "^14.0.14",
+    "@types/tmp": "^0.2.0",
+    "glob": "^7.1.6",
+    "jest": "^26.1.0",
+    "lodash": "^4.17.19",
+    "prettier": "^2.0.5",
+    "tmp": "^0.2.1",
+    "ts-jest": "26.1.1",
+    "typescript": "^3.9.6"
+  }
+}
