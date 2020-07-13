@@ -48,3 +48,19 @@ test("getOutputPath different names in root folder", () => {
         "tmp/backupTwo/b.txt"
     ]);
 });
+
+test('case insensitive for windows', () => {
+    const outputPaths = getOutputPaths([
+        "x/a.txt", 
+        "X/a.txt",
+        "x/a.TXT",
+        "x/a.png"
+    ]);
+
+    expect(outputPaths).toEqual([
+        "tmp/x/a.txt", 
+        "tmp/X/a2.txt",
+        "tmp/x/a3.TXT",
+        "tmp/x/a.png"
+    ]);
+});

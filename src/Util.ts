@@ -1,8 +1,8 @@
-import fs = require("fs");
-import path = require("path");
-import _ = require("lodash");
+import fs = require('fs');
+import path = require('path');
+import _ = require('lodash');
 
-import FileInfo from "./FileInfo";
+import FileInfo from './FileInfo';
 
 export function getUniqueFiles(files: FileInfo[]) {
     let uniqueFiles: FileInfo[] = [];
@@ -14,12 +14,12 @@ export function getUniqueFiles(files: FileInfo[]) {
     return uniqueFiles;
 }
 
-export function writeFile(filePath: string, contents: Buffer) {
-    const outDirPath = path.dirname(filePath);
+export function copyFile(filePath: string, outputPath: string) {
+    const outDirPath = path.dirname(outputPath);
 
     if (!fs.existsSync(outDirPath)) {
         fs.mkdirSync(outDirPath);
     }
 
-    fs.writeFileSync(filePath, contents);
+    fs.copyFileSync(filePath, outputPath);
 }
